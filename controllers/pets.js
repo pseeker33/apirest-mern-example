@@ -1,9 +1,12 @@
+import petsModel from "../models/pets.js";
+
 class petsController {
   constructor() {}
 
   async create(req, res) {
     try {
-      res.status(201).json({ status: "create-ok" });
+      const data = await petsModel.create(req.body);
+      res.status(201).json(data);
     } catch (e) {
       res.status(500).send(e);
     }
@@ -11,7 +14,9 @@ class petsController {
 
   async update(req, res) {
     try {
-      res.status(201).json({ status: "update-ok" });
+      const { id } = req.params;
+      const data = await petsModel.update(id, req.body);
+      res.status(200).json(data);
     } catch (e) {
       res.status(500).send(e);
     }
@@ -19,7 +24,9 @@ class petsController {
 
   async delete(req, res) {
     try {
-      res.status(201).json({ status: "delete-ok" });
+      const { id } = req.params;
+      const data = await petsModel.delete(id);
+      res.status(206).json(data);
     } catch (e) {
       res.status(500).send(e);
     }
@@ -27,7 +34,8 @@ class petsController {
 
   async getAll(req, res) {
     try {
-      res.status(201).json({ status: "getall-ok" });
+      const data = await petsModel.getAll();
+      res.status(201).json(data);
     } catch (e) {
       res.status(500).send(e);
     }
@@ -35,7 +43,9 @@ class petsController {
 
   async getOne(req, res) {
     try {
-      res.status(201).json({ status: "getone-ok" });
+      const { id } = req.params;
+      const data = await petsModel.getOne(id);
+      res.status(201).json(data);
     } catch (e) {
       res.status(500).send(e);
     }
