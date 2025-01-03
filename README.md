@@ -1,4 +1,4 @@
-# apirest-mern-example
+# APIREST Example
 
 ## Description
 Example creating a complete API REST using Node.js, Express, MongoDB and MVC design pattern. This API allows basic CRUD operations for managing pets in an adoption platform.
@@ -11,6 +11,29 @@ Example creating a complete API REST using Node.js, Express, MongoDB and MVC des
 - **MVC Design Pattern**: Model-View-Controller pattern for organizing the application.
 - **dotenv**: Package for managing environment variables.
   
+## Project Structure
+```
+a-github/
+├── config/
+│   └── dbClient.js        # MongoDB connection logic
+├── controllers/
+│   └── pets.js            # Controller for handling pet-related requests
+├── helpers/
+│   (empty)                # Utility functions (if needed in the future)
+├── models/
+│   └── pets.js            # MongoDB schema and database operations
+├── routes/
+│   └── pets.js            # Routes for pet CRUD operations
+├── node_modules/          # Node.js modules
+├── .env                   # Environment variables (not tracked by Git)
+├── .gitignore             # Git ignore file
+├── app.js                 # Main entry point of the server
+├── express-run-test.js    # Script for testing express server (optional)
+├── package.json           # Project dependencies and scripts
+├── package-lock.json      # Package lock file
+└── README.md              # This file
+```
+
 ## Installation
 
 ### Prerequisites:
@@ -52,28 +75,6 @@ Example creating a complete API REST using Node.js, Express, MongoDB and MVC des
 
    The server will start running on port 5100.
 
-## Project Structure
-```
-a-github/
-├── config/
-│   └── dbClient.js        # MongoDB connection logic
-├── controllers/
-│   └── pets.js            # Controller for handling pet-related requests
-├── helpers/
-│   (empty)                # Utility functions (if needed in the future)
-├── models/
-│   └── pets.js            # MongoDB schema and database operations
-├── routes/
-│   └── pets.js            # Routes for pet CRUD operations
-├── node_modules/          # Node.js modules
-├── .env                   # Environment variables (not tracked by Git)
-├── .gitignore             # Git ignore file
-├── app.js                 # Main entry point of the server
-├── express-run-test.js    # Script for testing express server (optional)
-├── package.json           # Project dependencies and scripts
-├── package-lock.json      # Package lock file
-└── README.md              # This file
-```
 
 ## API Routes
 
